@@ -1,4 +1,5 @@
-const inquirer = required('inquirer');
+
+const inquirer = require('inquirer');
 
 const Engineer = require('./library/Engineer');
 const path = require('path');
@@ -29,7 +30,33 @@ function runApp () {
         })
     }
 
-
+    function addEngineer() {
+        inquirer.prompt ([
+            {
+                type: 'input',
+                name: 'enName',
+                message: 'What is the name of the engineer?'
+            },
+            {
+                type: 'input',
+                name: 'enId',
+                message: 'What is their ID number?'
+            },
+            {
+                type: 'input',
+                name: 'enEmail',
+                message: 'What is their email?'
+            },
+            {
+                type: 'input',
+                name: 'enGitHub',
+                message: 'What is their Github profile?'
+            }
+        ])
+    }
 
 assembleTeam();
+
 }
+
+runApp();
